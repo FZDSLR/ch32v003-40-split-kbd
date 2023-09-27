@@ -4,4 +4,4 @@
 *.lst
 *.map
 demo_composite_hid/.cache/
-demo_composite_hid/.compile_commands.json
+demo_composite_hid/compile_commands.json
