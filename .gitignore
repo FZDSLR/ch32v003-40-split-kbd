@@ -1,0 +1,7 @@
+*.elf
+*.bin
+*.hex
+*.lst
+*.map
+demo_composite_hid/.cache/
+demo_composite_hid/.compile_commands.json

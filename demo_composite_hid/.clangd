@@ -1,0 +1,2 @@
+CompileFlags:
+  Remove: [-mabi=ilp32e,-march=rv32ec ]
