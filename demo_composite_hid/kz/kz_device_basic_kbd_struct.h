@@ -149,6 +149,26 @@ void kz_keycode_decode(uint16_t keycode, uint8_t status,uint8_t* keycode_out_buf
                     endflag=1;
                 }
                 break;
+            case CMD_LAYER_DF:
+                if (nowstatus==KEY_ENTERING_PRESSED) {
+                    nextstatus = KEY_LONG_PRESSED;
+                    KZ_RESET_LAYER_STATUS(*layer_status,(keycode&0xff));
+                    *defalut_layer=(keycode&0xff);
+                } else if (nowstatus==KEY_ENTERING_RELEASED) {
+                    nextstatus = KEY_LONG_RELEASED;
+                    endflag=1;
+                }
+                break;
+            case CMD_LAYER_TO:
+                if (nowstatus==KEY_ENTERING_PRESSED) {
+                    nextstatus = KEY_LONG_PRESSED;
+                    *layer_status=0x00;
+                    KZ_SET_LAYER_STATUS(*layer_status,(keycode&0xff));
+                } else if (nowstatus==KEY_ENTERING_RELEASED) {
+                    nextstatus = KEY_LONG_RELEASED;
+                    endflag=1;
+                }
+                break;
             default:
                 endflag=1;
                 // printf("LTN %d %d\n",laststatus,nowstatus);

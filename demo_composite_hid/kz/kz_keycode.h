@@ -296,13 +296,16 @@ enum keycode_defines {
 #define CMD_LAYER_LT 0x0A
 #define CMD_LAYER_LM 0x0B
 #define CMD_LAYER_TG 0x0C
-
+#define CMD_LAYER_DF 0x0D
+#define CMD_LAYER_TO 0x0E
 
 // #define MO(X) (((CMD_LAYER_MO<<4)|(X&0x0F))<<8)
 #define MO(X) ((CMD_LAYER_MO<<12)|(X&0xFF))
 #define LT(layer, kc) ((((CMD_LAYER_LT<<4)|(layer&0x0F))<<8)|kc)
 #define LM(layer, mod) ((((CMD_LAYER_LM<<4)|(layer&0x0F))<<8)|mod)
 #define TG(layer) ((CMD_LAYER_TG<<12)|(layer&0xFF))
+#define DF(layer) ((CMD_LAYER_DF<<12)|(layer&0xFF))
+#define TO(layer) ((CMD_LAYER_TO<<12)|(layer&0xFF))
 
 #define LM_MOD_LCTL (1<<0)
 #define LM_MOD_LSFT (1<<1)
